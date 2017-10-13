@@ -357,7 +357,7 @@ typedef struct
 	UINT16		voltsInput;														// Volts, 0.01v (0-655.34V)       0xFFFF --> "No data"
 	UINT16		tempFET;														// Temperature, 0.01C (0-655.34C) 0xFFFF --> "No data"
 	UINT16		currentMotor;													// Current, 10mA (0-655.34A)      0xFFFF --> "No data"
-	UINT16		tempBEC;														// Temperature, 0.1C (0-6553.4C)  0x7FFF --> "No data"
+	UINT16		tempBEC;														// Temperature, 0.1C (0-6553.4C)  0xFFFF --> "No data"
 	UINT8		currentBEC;														// BEC Current, 100mA (0-25.4A)   0xFF ----> "No data"
 	UINT8		voltsBEC;														// BEC Volts, 0.05V (0-12.70V)    0xFF ----> "No data"
 	UINT8		throttle;														// 0.5% (0-100%)                  0xFF ----> "No data"
@@ -597,6 +597,7 @@ enum JETCAT_ECU_TURBINE_STATE {							// ECU Status definitions
 		JETCENT_ECU_STATE_STARTER_TEST = 0x76,
 		JETCENT_ECU_STATE_PRIME_FUEL = 0x77,
 		JETCENT_ECU_STATE_PRIME_BURNER = 0x78,
+
 		JETCENT_ECU_STATE_MAN_COOL = 0x79,
 		JETCENT_ECU_STATE_AUTO_COOL = 0x7A,
 		JETCENT_ECU_STATE_IGN_HEAT = 0x7B,
