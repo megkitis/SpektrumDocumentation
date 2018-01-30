@@ -39,6 +39,7 @@
 #define	TELE_DEVICE_PBOX			(0x0A)										// PowerBox
 #define	TELE_DEVICE_LAPTIMER		(0x0B)										// Lap Timer
 #define	TELE_DEVICE_TEXTGEN			(0x0C)										// Text Generator
+#define	TELE_DEVICE_VTX				(0x0D)										// Video Transmitter Feedback
 #define	TELE_DEVICE_AIRSPEED		(0x11)										// Air Speed (Eagle Tree Sensor)
 #define	TELE_DEVICE_ALTITUDE		(0x12)										// Altitude (Eagle Tree Sensor)
 #define	TELE_DEVICE_GMETER			(0x14)										// G-Force (Eagle Tree Sensor)
@@ -342,6 +343,28 @@ typedef struct
 	UINT8		lineNumber;														// Line number to display (0 = title, 1-8 for general, 254 = Refresh backlight, 255 = Erase all text on screen)
 	char		text[13];														// 0-terminated text when < 13 chars
 } STRU_TELE_TEXTGEN;
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//							VIDEO TRANSMITTER (VTX)
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//	VTX spec subject to change. Refer to Spektrum VTX Interfacing document for latest info
+//
+typedef struct
+
+{
+	UINT8		identifier;
+	UINT8		sID;															// Secondary ID
+	UINT8		band;															// VTX Band (0 = Fatshark, 1 = Raceband, 2 = E, 3 = B, 4 = A, 5-7 = Reserved)
+	UINT8		channel;														// VTX Channel (0-7)
+	UINT8		pit;															// Pit/Race mode (0 = Race, 1 = Pit). Race = (normal operating) mode. Pit = (reduced power) mode. When PIT is set, it overrides all other power settings.
+	UINT8		power;															// VTX Power (0 = Off, 1 = 1mw to 14mW, 2 = 15mW to 25mW, 3 = 26mW to 99mW, 4 = 100mW to 299mW, 5 = 300mW to 600mW, 6 = 601mW+, 7 = manual control)
+	UINT16		powerDec;														// VTX Power as a decimal 1mw/unit
+	UINT8		region;															// Region (0 = USA, 1 = EU)
+	UINT8		unused[7];														// reserved
+} STRU_TELE_VTX;
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -964,6 +987,7 @@ typedef union
 	STRU_TELE_USER_16SU32S	user_16SU32S;
 	STRU_TELE_USER_16U32SU	user_16U32SU;
 	STRU_TELE_TEXTGEN		textgen;
+	STRU_TELE_VTX			vtx;
 	STRU_TELE_V_SPEAK		vSpeak;
 	STRU_TELE_SMOKE_EL		smoke_el;
 } UN_TELEMETRY;																	// All telemetry messages
