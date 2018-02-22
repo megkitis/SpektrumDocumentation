@@ -68,6 +68,12 @@
 #define	TELE_DEVICE_USER_16U32SU	(0x56)										// User-Defined, STRU_TELE_USER_16U32SU
 #define	TELE_DEVICE_VSPEAK			(0x60)										// Reserved for V-Speak
 #define	TELE_DEVICE_SMOKE_EL		(0x61)										// Reserved for Smoke-EL.de
+#define	TELE_DEVICE_CROSSFIRE		(0x62)										// Reserved for Crossfire devices
+#define	TELE_DEVICE_RSV_63			(0x63)										// Reserved
+#define	TELE_DEVICE_RSV_64			(0x64)										// Reserved
+#define	TELE_DEVICE_RSV_65			(0x65)										// Reserved
+#define	TELE_DEVICE_EXTRF			(0x66)										// Reserved for Generic External RF sources
+#define	TELE_DEVICE_RSV_67			(0x67)										// Reserved
 #define	TELE_DEVICE_RSV_68			(0x68)										// Reserved
 #define	TELE_DEVICE_RSV_69			(0x69)										// Reserved
 #define	TELE_DEVICE_RSV_6A			(0x6A)										// Reserved
@@ -77,6 +83,7 @@
 #define	TELE_DEVICE_RSV_6E			(0x6E)										// Reserved
 #define	TELE_DEVICE_RSV_6F			(0x6F)										// Reserved
 #define	TELE_DEVICE_RSV_70			(0x70)										// Reserved
+#define	TELE_XRF_LINKSTATUS			(0x71)										// External RF Link Status
 #define	TELE_DEVICE_ALT_ZERO		(0x7B)										// Pseudo-device setting Altitude "zero"
 #define	TELE_DEVICE_RTC				(0x7C)										// Pseudo-device giving timestamp
 #define	TELE_DEVICE_FRAMEDATA		(0x7D)										// Transmitter frame data
